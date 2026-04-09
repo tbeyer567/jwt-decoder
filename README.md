@@ -5,9 +5,9 @@ A simple CLI tool for decoding JSON Web Tokens (JWT).
 ## Features
 
 - Decode JWTs and view header and payload
-- Optional signature verification (HMAC only)
-- Supports HS256, RS256, and more
-- No external dependencies
+- Optional signature verification for HMAC-signed tokens (for example HS256)
+- Decodes tokens with any algorithm in the header/payload display path
+- Uses `github.com/golang-jwt/jwt/v5` for signature parsing and verification
 
 ## Usage
 
@@ -35,6 +35,10 @@ Payload:
 }
 Signature checks out
 ```
+
+## Notes
+
+- Signature verification currently supports HMAC methods only. Tokens that use asymmetric algorithms such as `RS256` are decoded for inspection, but not verified by this CLI yet.
 
 ## License
 
