@@ -9,13 +9,37 @@ A simple CLI tool for decoding JSON Web Tokens (JWT).
 - Decodes tokens with any algorithm in the header/payload display path
 - Uses `github.com/golang-jwt/jwt/v5` for signature parsing and verification
 
-## Usage
+## Build
 
 ```bash
 git clone https://github.com/tbeyer567/jwt-decoder.git
 cd jwt-decoder
 go build -o jwt-decoder
 ```
+
+## Usage
+
+```bash
+jwt-decoder -t <jwt>
+```
+
+Decode and verify an HMAC-signed token:
+
+```bash
+jwt-decoder -t <jwt> -s <hmac-secret>
+```
+
+Show CLI help:
+
+```bash
+jwt-decoder -h
+```
+
+### Flags
+
+- `-t`, `-token` (required): JWT token to decode
+- `-s`, `-secret` (optional): HMAC secret key used for signature verification
+- `-h`, `-help`: show help text
 
 ## Example
 
